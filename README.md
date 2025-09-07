@@ -1,16 +1,38 @@
-# alarm
+# Alarm App
 
-A new Flutter project.
+A **Flutter-based Alarm Application** that allows users to:  
 
-## Getting Started
+- Set multiple alarms with **time and date**.  
+- Receive **local notifications** when alarms trigger.  
+- Automatically **disable alarms** after they go off.  
+- **Store alarms locally** using `GetStorage` to persist across app restarts.  
+- Fetch and display the user's **current location**.  
+- Display alarms with **formatted time (AM/PM) and date**.  
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Add, edit, and toggle alarms.  
+- Friendly UI showing **time, date, and switch** in a single row.  
+- Notifications work on **Android and iOS devices**.  
+- Supports **12-hour format** with AM/PM.  
+- Automatic rescheduling of enabled alarms after app restart.  
+- Initial sample alarms included for testing.  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Dependencies
+
+```yaml
+dependencies:
+  get: ^4.7.2
+  smooth_page_indicator: ^1.2.1
+  device_preview: ^1.3.1
+  google_fonts: ^6.3.1
+  location: ^8.0.1
+  geolocator: ^14.0.2
+  geocoding: ^4.0.0
+  timezone: ^0.10.1
+  flutter_local_notifications: ^19.4.1
+  get_storage: ^2.1.1
