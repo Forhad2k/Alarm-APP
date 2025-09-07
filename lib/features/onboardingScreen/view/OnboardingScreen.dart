@@ -1,4 +1,6 @@
-import 'package:alarm/features/OnboardingScreen/OnboardingController.dart';
+import 'package:alarm/constants/App_color.dart';
+import 'package:alarm/constants/onboarding_data.dart';
+import 'package:alarm/features/OnboardingScreen/controller/OnboardingController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -7,25 +9,6 @@ class OnboardingScreen extends StatelessWidget {
   OnboardingScreen({super.key});
   final controller = Get.put(OnboardingController());
 
-  final List<Map<String, String>> onboardingData = [
-    {
-      "image": "assets/images/onboarding1.gif",
-      "title": "Sync with Nature’s Rhythm",
-      "subtitle":
-      "Experience a peaceful transition into the evening with an alarm that aligns with the sunset. Your perfect reminder, always 15 minutes before sundown."
-    },
-    {
-      "image": "assets/images/onboarding2.gif",
-      "title": "Effortless & Automatic",
-      "subtitle":
-      "No need to set alarms manually. Wakey calculates the sunset time for your location and alerts you on time."
-    },
-    {
-      "image": "assets/images/onboarding3.gif",
-      "title": "Relax & Unwind",
-      "subtitle": "Hope to take the courage to pursue your dreams."
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -131,8 +114,8 @@ class OnboardingScreen extends StatelessWidget {
                         effect: WormEffect(
                           dotHeight: height * 0.012,
                           dotWidth: height * 0.012,
-                          activeDotColor: const Color(0xff7B4CDF),
-                          dotColor: const Color(0xff858485),
+                          activeDotColor: AppColors.purple,
+                          dotColor: AppColors.grey,
                         ),
                       ),
                       SizedBox(height: height * 0.03),
@@ -159,7 +142,7 @@ class OnboardingScreen extends StatelessWidget {
                           child: Ink(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
-                              color: const Color(0xff7B4CDF),
+                              color: AppColors.purple,
                             ),
                             child: Container(
                               alignment: Alignment.center,
@@ -170,7 +153,7 @@ class OnboardingScreen extends StatelessWidget {
                                     : "Next",
                                 style: TextStyle(
                                   fontSize: width * 0.045,
-                                  color: Colors.white,
+                                  color: AppColors.text,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
