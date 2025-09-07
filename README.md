@@ -36,3 +36,42 @@ dependencies:
   timezone: ^0.10.1
   flutter_local_notifications: ^19.4.1
   get_storage: ^2.1.1
+
+---
+
+## Android Permissions
+
+Add the following permissions to android/app/src/main/AndroidManifest.xml:
+```
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+<uses-permission android:name="android.permission.VIBRATE"/>
+<uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+
+---
+## Also in AndroidManifest.xml, under <application>:
+
+<receiver
+    android:exported="false"
+    android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" >
+</receiver>
+
+<receiver
+    android:exported="false"
+    android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver">
+    <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+        <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+        <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+        <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+    </intent-filter>
+</receiver>
+
+<receiver
+    android:exported="false"
+    android:name="com.dexterous.flutterlocalnotifications.FlutterLocalNotificationsReceiver">
+</receiver>
+
