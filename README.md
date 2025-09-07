@@ -42,7 +42,7 @@ dependencies:
 ## Android Permissions
 
 Add the following permissions to android/app/src/main/AndroidManifest.xml:
-```
+`
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
@@ -54,7 +54,7 @@ Add the following permissions to android/app/src/main/AndroidManifest.xml:
 ---
 ## Also in AndroidManifest.xml, under <application>:
 
-<receiver
+`<receiver
     android:exported="false"
     android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" >
 </receiver>
